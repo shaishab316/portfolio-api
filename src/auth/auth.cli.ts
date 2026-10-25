@@ -5,4 +5,4 @@ import Database from 'better-sqlite3';
 const sqlite = new Database(process.env.DATABASE_URL!);
 const db = drizzle(sqlite);
 
-export const auth = createAuth(db);
+export const auth = createAuth({ db, sendEmail: async ({}) => {} });
